@@ -52,15 +52,53 @@ bDiv.onclick = function(){
 }
 bE.onclick = function(){
     
+    
+    var input = bR.innerHTML;
+    //  var input = "11011+1000";
 
-    const str = bR.innerHTML;
-    const numbers = str.split(/\D/g);
-    const operator = str.split(/\d/g).filter(Boolean);
+    var numbers = input.split(/\D/g);
+    //  for(const e of numbers){
+    //  console.log(e);
+    //  }
+     
+     var op = input.split(/\d/g).filter(Boolean);
+    //  for(const e of op)
+    //  {
+    //      console.log(e);
+    //  }
+     
+    //  console.log(numbers.length, op.length);
+     
+     var i = 0, j = 0;
+     var expression = "";
+     while( (i < numbers.length) || (j < op.length))
+     {
+         if(i < numbers.length){
+             var num = parseInt(numbers[i], 2);
+             expression = expression + num;
+             }
+         if(j < op.length)
+         {
+             expression = expression + op[i];
+         }
+         i++;
+         j++;
+     
+     }
+     
+    //  console.log(expression);
+    //  console.log(eval(expression));
+    var res_10 = eval(expression);
+    var res_2 = res_10.toString(2);
+    bR.innerHTML = res_2; 
+     //console.log(res_10.toString(2));
+     // const numbers = str.split(/\D/g);
+    // const operator = str.split(/\d/g).filter(Boolean);
 
-    console.log(numbers);
-    console.log(operator);
-    var str1 = "Result of expression";
-    bR.innerHTML = str1;
+    // console.log(numbers);
+    // console.log(operator);
+    // var str1 = "Result of expression";
+    // bR.innerHTML = str1;
 
     // var expr = bR.innerHTML;
     // var nums = /(\d+)/g;
