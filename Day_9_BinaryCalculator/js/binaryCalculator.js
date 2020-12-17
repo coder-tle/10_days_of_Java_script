@@ -85,11 +85,13 @@ bE.onclick = function(){
          j++;
      
      }
-     
+    // var expression_str = expression.toString(); 
     //  console.log(expression);
     //  console.log(eval(expression));
-    var res_10 = eval(expression);
-    var res_2 = res_10.toString(2);
+    // var res_10 = eval(expression);
+    // var res_2 = res_10.toString(2);
+    
+    var res_2 = eval(expression).toString(2); 
     bR.innerHTML = res_2; 
      //console.log(res_10.toString(2));
      // const numbers = str.split(/\D/g);
